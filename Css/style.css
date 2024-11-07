@@ -1,0 +1,202 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c2f33;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+#main-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 300px;
+    padding: 20px;
+    background-color: #1f2227;
+    border-right: 2px solid #7289da;
+    flex-shrink: 0;
+    height: 100%; /* Full height of the screen */
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: block;
+}
+
+#hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+#sidebar h2, #sidebar h3 {
+    margin-top: 0;
+}
+
+#sidebar-info p, #sidebar ul, #sidebar p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 5px 0;
+    color: #bbb;
+}
+
+#sidebar ul li::before {
+    content: "• ";
+    color: #7289da;
+}
+
+/* Chat Container Styles */
+#chat-container {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #23272a;
+    margin-left: 300px; /* Offset the chat area for sidebar */
+    height: 100%; /* Full height of the screen */
+}
+
+#chat {
+    height: calc(100vh - 120px); /* Make the chat area fill the remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    border: 2px solid #7289da;
+    border-radius: 5px;
+    background-color: #2c2f33;
+    margin-bottom: 10px;
+}
+
+/* WhatsApp-style Message Bubbles */
+.message {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.user .text, .bot .text {
+    max-width: 75%; /* Limit width to match WhatsApp bubble */
+    padding: 10px 15px;
+    border-radius: 20px; /* Rounded corners like WhatsApp */
+    position: relative;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.user {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.bot {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.user .text {
+    background-color: #4dc247; /* WhatsApp green for user messages */
+    color: #fff;
+    border-top-right-radius: 0; /* Flat top right edge */
+}
+
+.bot .text {
+    background-color: #f0f0f0; /* Light gray for bot messages */
+    color: #333;
+    border-top-left-radius: 0; /* Flat top left edge */
+}
+
+/* Time Positioning (bottom of each message) */
+.time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+    text-align: right; /* Align the time for user messages */
+    align-self: flex-end; /* Right-align the time for user */
+    margin-right: 10px;
+}
+
+/* Input Container Styles */
+#input-container {
+    display: flex;
+    align-items: center;
+}
+
+#input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px; /* Rounded corners like input field */
+    font-size: 16px;
+    border: 1px solid #7289da;
+    background-color: #2c2f33;
+    color: #fff;
+}
+
+#button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #7289da;
+    margin-left: 5px;
+}
+
+#button:hover {
+    color: #fff;
+}
+
+/* Avatar Styling */
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #sidebar {
+        display: none; /* Hide the sidebar on small screens */
+    }
+
+    #chat-container {
+        margin-left: 0; /* Remove offset */
+    }
+
+    #hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    #sidebar.show {
+        display: block;
+    }
+
+    #chat-container {
+        margin-left: 0;
+    }
+}
