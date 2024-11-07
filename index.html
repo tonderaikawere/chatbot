@@ -2,18 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chatbot Example</title>
-    <link rel="stylesheet" href="./Css/style.css">
-    <link rel="stylesheet" href="./Css/fontawesome/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quily Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="./Css/style.css"> <!-- Local CSS -->
 </head>
 <body>
-    <div class="container">
-        <div class="title">
-            Let's chat
+    <div id="main-container">
+        <!-- Left: Sidebar Container -->
+        <div id="sidebar">
+            <div id="hamburger-menu" class="hamburger" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <h2>About Quily</h2>
+            <div id="sidebar-info">
+                <p><strong>Date:</strong> <span id="current-date"></span></p>
+                <p><strong>Owners:</strong> Quinton & Lyle</p>
+                <p><strong>User Name:</strong> <span id="user-name">Not Provided</span></p>
+            </div>
+
+            <h3>Topics Quily Knows</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>APIs</li>
+                <li>Digital Marketing</li>
+                <li>UI/UX Design</li>
+            </ul>
+
+            <h3>Guidelines</h3>
+            <p>Please use the chatbot respectfully. Avoid inappropriate questions.</p>
         </div>
-        <div class="chat" id="chat"></div>
-        <input type="text" class="input" id="input" placeholder="Ask Quinton Question...">
-        <button class="button" id="buttton"><i class="fa-brands fa-telegram"></i></button>
+
+        <!-- Right: Chat Container -->
+        <div id="chat-container">
+            <div id="chat"></div>
+            <div id="input-container">
+                <input type="text" id="input" placeholder="Type a message...">
+                <button id="button">
+                    <i class="fas fa-paper-plane"></i> <!-- Send icon -->
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="./Js/script.js"></script>
